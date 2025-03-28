@@ -1,0 +1,103 @@
+/* styles.css */
+/* 
+  CSS核心方法库：
+  1. 布局系统: display (flex/grid), position, float
+  2. 盒模型: margin, padding, border, box-sizing
+  3. 文本样式: font-family, color, text-align
+  4. 响应式设计: @media queries
+  5. 动画系统: @keyframes, transition
+  6. 选择器系统: .class, #id, element
+  7. 伪类应用: :hover, :active, :nth-child()
+*/
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Flex布局系统 */
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    background: #2c3e50;
+    padding: 1rem;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  /* static/css/styles.css */
+body {
+  /* 核心背景设置 */
+  background-image: url('../images/background.jpg'); /* 注意路径层级 */
+  background-size: cover;          /* 自动缩放适应视口 */
+  background-position: center;    /* 图片居中显示 */
+  background-repeat: no-repeat;   /* 禁止平铺重复 */
+  background-attachment: fixed;   /* 固定背景不随滚动移动 */
+  
+  /* 增强显示效果 */
+  min-height: 100vh;             /* 保证最小高度为视口高度 */
+  margin: 0;                     /* 清除默认边距 */
+  
+  /* 可选叠加渐变效果 */
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.3); /* 半透明遮罩层 */
+}
+  
+/* 修改卡片样式部分 */
+.card {
+  /* 新增背景色 */
+  background: rgba(174, 158, 158, 0.9); /* 半透明白色背景 */
+  backdrop-filter: blur(5px); /* 毛玻璃效果 */
+  
+  /* 调整现有属性 */
+  color: #2c3e50; /* 文字颜色改为深蓝色 */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 添加细边框 */
+  
+  /* 原有效果保持不变 */
+  width: 300px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease; /* 改为all以支持更多属性动画 */
+  /*
+  .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 保留原有其他样式 
+  width: 300px;
+  color: #c53232;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  */
+  
+}
+
+/* 增强悬停效果 */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* 加深阴影 */
+  background: rgb(247, 243, 242); /* 悬停时取消透明度 */
+}
+
+/* 标题颜色优化 */
+.title {
+  color: #2980b9; /* 调整蓝色为更柔和的版本 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* 添加文字阴影 */
+}
+  
+  /* 响应式设计 */
+  @media (max-width: 600px) {
+    .card {
+      width: 90%;
+    }
+  }
